@@ -1,0 +1,376 @@
+openapi: 3.0.0
+info:
+  title: Get Pegelmessstationen
+  version: "1.0"
+servers:
+  - url: "http://localhost:4010"
+paths:
+  /pegelmessstationen/:
+    get:
+      summary: get Liste aller Pegelmessstationen
+      tags: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              examples:
+                pegelmessstationen:
+                  value:
+                    [
+                      {
+                        "akkustand": 0,
+                        "aktueller_messstand": 14,
+                        "erste_messung": "2022-03-06T12:45:12.0Z",
+                        "geraete_status": false,
+                        "gewaesserpegelart": "Kanalpegel",
+                        "kennung": 459,
+                        "koordinaten": [53.644373, 11.643318],
+                        "letzte_messung": "2023-01-17T22:01:10.0Z",
+                        "max_messstand": 18,
+                        "min_messstand": 10,
+                        "ort": "Glambeck See",
+                        "temperatur": 12,
+                      },
+                      {
+                        "akkustand": 0,
+                        "aktueller_messstand": 12,
+                        "erste_messung": "2022-09-28T04:03:12.0Z",
+                        "geraete_status": false,
+                        "gewaesserpegelart": "Küstenpegel",
+                        "kennung": 118,
+                        "koordinaten": [53.905831, 11.433369],
+                        "letzte_messung": "2023-01-18T09:09:11.0Z",
+                        "max_messstand": 13,
+                        "min_messstand": 3,
+                        "ort": "Wismar",
+                        "temperatur": 19,
+                      },
+                      {
+                        "akkustand": 0,
+                        "aktueller_messstand": 8,
+                        "erste_messung": "2023-01-06T12:13:13.0Z",
+                        "geraete_status": false,
+                        "gewaesserpegelart": "Binnenseepegel",
+                        "kennung": 759,
+                        "koordinaten": [53.776846, 12.199914],
+                        "letzte_messung": "2023-01-17T08:16:12.0Z",
+                        "max_messstand": 18,
+                        "min_messstand": 6,
+                        "ort": "Inselsee",
+                        "temperatur": 16,
+                      },
+                      {
+                        "akkustand": 65,
+                        "aktueller_messstand": 7,
+                        "erste_messung": "2022-06-07T01:49:34.0Z",
+                        "geraete_status": true,
+                        "gewaesserpegelart": "Binnenseepegel",
+                        "kennung": 695,
+                        "koordinaten": [53.771605, 11.496913],
+                        "letzte_messung": "2023-01-18T17:25:00.0Z",
+                        "max_messstand": 19,
+                        "min_messstand": 8,
+                        "ort": "Schweriner See",
+                        "temperatur": 11,
+                      },
+                      {
+                        "akkustand": 19,
+                        "aktueller_messstand": 13,
+                        "erste_messung": "2022-01-18T20:08:00.0Z",
+                        "geraete_status": true,
+                        "gewaesserpegelart": "Binnenseepegel",
+                        "kennung": 566,
+                        "koordinaten": [53.718677, 11.849787],
+                        "letzte_messung": "2023-01-18T15:53:00.0Z",
+                        "max_messstand": 17,
+                        "min_messstand": 9,
+                        "ort": "Großer Sternberger See",
+                        "temperatur": 12,
+                      },
+                      {
+                        "akkustand": 51,
+                        "aktueller_messstand": 9,
+                        "erste_messung": "2022-06-21T01:01:06.0Z",
+                        "geraete_status": true,
+                        "gewaesserpegelart": "Kanalpegel",
+                        "kennung": 711,
+                        "koordinaten": [53.830357, 12.089978],
+                        "letzte_messung": "2023-01-18T06:23:12.0Z",
+                        "max_messstand": 10,
+                        "min_messstand": 4,
+                        "ort": "Bützow-Güstrow-Kanal",
+                        "temperatur": 10,
+                      },
+                      {
+                        "akkustand": 91,
+                        "aktueller_messstand": 9,
+                        "erste_messung": "2022-06-19T00:00:00.0Z",
+                        "geraete_status": true,
+                        "gewaesserpegelart": "Binnenseepegel",
+                        "kennung": 418,
+                        "koordinaten": [53.863633, 11.698877],
+                        "letzte_messung": "2023-01-18T10:10:40.0Z",
+                        "max_messstand": 10,
+                        "min_messstand": 3,
+                        "ort": "Neuklostersee",
+                        "temperatur": 11,
+                      },
+                      {
+                        "akkustand": 38,
+                        "aktueller_messstand": 4,
+                        "erste_messung": "2022-10-15T03:19:00.0Z",
+                        "geraete_status": true,
+                        "gewaesserpegelart": "Flusspegel",
+                        "kennung": 368,
+                        "koordinaten": [53.544882, 11.509637],
+                        "letzte_messung": "2023-01-17T09:01:00.0Z",
+                        "max_messstand": 14,
+                        "min_messstand": 3,
+                        "ort": "Stör",
+                        "temperatur": 14,
+                      },
+                      {
+                        "akkustand": 91,
+                        "aktueller_messstand": 8,
+                        "erste_messung": "2022-10-21T14:12:00.0Z",
+                        "geraete_status": true,
+                        "gewaesserpegelart": "Binnenseepegel",
+                        "kennung": 747,
+                        "koordinaten": [53.610884, 11.697779],
+                        "letzte_messung": "2023-01-17T00:01:00.0Z",
+                        "max_messstand": 15,
+                        "min_messstand": 5,
+                        "ort": "Barniner See",
+                        "temperatur": 21,
+                      },
+                      {
+                        "akkustand": 82,
+                        "aktueller_messstand": 16,
+                        "erste_messung": "2022-05-15T00:00:00.0Z",
+                        "geraete_status": true,
+                        "gewaesserpegelart": "Flusspegel",
+                        "kennung": 296,
+                        "koordinaten": [53.656406, 11.845830],
+                        "letzte_messung": "2023-01-18T21:21:00.0Z",
+                        "max_messstand": 17,
+                        "min_messstand": 13,
+                        "ort": "Kobrow",
+                        "temperatur": 13,
+                      },
+                      {
+                        "akkustand": 63,
+                        "aktueller_messstand": 16,
+                        "erste_messung": "2022-10-26T07:38:00.0Z",
+                        "geraete_status": true,
+                        "gewaesserpegelart": "Binnenseepegel",
+                        "kennung": 618,
+                        "koordinaten": [53.671310, 11.869912],
+                        "letzte_messung": "2023-01-17T08:52:00.0Z",
+                        "max_messstand": 16,
+                        "min_messstand": 7,
+                        "ort": "Holzendorfer See",
+                        "temperatur": 19,
+                      },
+                      {
+                        "akkustand": 23,
+                        "aktueller_messstand": 6,
+                        "erste_messung": "2022-06-09T07:36:00.0Z",
+                        "geraete_status": true,
+                        "gewaesserpegelart": "Küstenpegel",
+                        "kennung": 334,
+                        "koordinaten": [53.947865, 11.346551],
+                        "letzte_messung": "2023-01-18T11:17:00.0Z",
+                        "max_messstand": 18,
+                        "min_messstand": 3,
+                        "ort": "Bades Huk",
+                        "temperatur": 14,
+                      },
+                      {
+                        "akkustand": 52,
+                        "aktueller_messstand": 10,
+                        "erste_messung": "2022-07-11T07:41:00.0Z",
+                        "geraete_status": true,
+                        "gewaesserpegelart": "Flusspegel",
+                        "kennung": 271,
+                        "koordinaten": [53.784865, 11.837973],
+                        "letzte_messung": "2023-01-18T18:39:00.0Z",
+                        "max_messstand": 14,
+                        "min_messstand": 4,
+                        "ort": "Warnow - Naturdorf Eickhof",
+                        "temperatur": 20,
+                      },
+                      {
+                        "akkustand": 15,
+                        "aktueller_messstand": 13,
+                        "erste_messung": "2022-11-30T18:22:00.0Z",
+                        "geraete_status": true,
+                        "gewaesserpegelart": "Binnenseepegel",
+                        "kennung": 993,
+                        "koordinaten": [53.778153, 11.764543],
+                        "letzte_messung": "2023-01-18T19:11:00.0Z",
+                        "max_messstand": 19,
+                        "min_messstand": 10,
+                        "ort": "Groß Labenzer See",
+                        "temperatur": 22,
+                      },
+                      {
+                        "akkustand": 67,
+                        "aktueller_messstand": 14,
+                        "erste_messung": "2022-06-18T05:05:00.0Z",
+                        "geraete_status": true,
+                        "gewaesserpegelart": "Flusspegel",
+                        "kennung": 360,
+                        "koordinaten": [53.828426, 11.783982],
+                        "letzte_messung": "2023-01-18T23:59:00.0Z",
+                        "max_messstand": 18,
+                        "min_messstand": 4,
+                        "ort": "Seebach",
+                        "temperatur": 22,
+                      },
+                      {
+                        "akkustand": 68,
+                        "aktueller_messstand": 6,
+                        "erste_messung": "2022-12-15T06:02:00.0Z",
+                        "geraete_status": true,
+                        "gewaesserpegelart": "Küstenpegel",
+                        "kennung": 695,
+                        "koordinaten": [53.997477, 11.445369],
+                        "letzte_messung": "2023-01-17T09:50:00.0Z",
+                        "max_messstand": 16,
+                        "min_messstand": 5,
+                        "ort": "Insel Poel",
+                        "temperatur": 16,
+                      },
+                      {
+                        "akkustand": 50,
+                        "aktueller_messstand": 16,
+                        "erste_messung": "2022-01-20T14:55:00.0Z",
+                        "geraete_status": true,
+                        "gewaesserpegelart": "Küstenpegel",
+                        "kennung": 225,
+                        "koordinaten": [44749532.687627524, 13474163.974171296],
+                        "letzte_messung": "2023-01-17T05:23:00.0Z",
+                        "max_messstand": 18,
+                        "min_messstand": 7,
+                        "ort": "irure Duis fu",
+                        "temperatur": 13,
+                      },
+                      {
+                        "akkustand": 42,
+                        "aktueller_messstand": 9,
+                        "erste_messung": "2022-11-04T23:30:00.0Z",
+                        "geraete_status": true,
+                        "gewaesserpegelart": "Binnenseepegel",
+                        "kennung": 876,
+                        "koordinaten": [53.788072, 11.376073],
+                        "letzte_messung": "2023-01-17T01:57:00.0Z",
+                        "max_messstand": 13,
+                        "min_messstand": 4,
+                        "ort": "Kleiner Dambecker See",
+                        "temperatur": 12,
+                      },
+                      {
+                        "akkustand": 27,
+                        "aktueller_messstand": 11,
+                        "erste_messung": "2022-01-29T04:04:00.0Z",
+                        "geraete_status": true,
+                        "gewaesserpegelart": "Binnenseepegel",
+                        "kennung": 141,
+                        "koordinaten": [53.622380, 11.429283],
+                        "letzte_messung": "2023-01-18T07:14:00.0Z",
+                        "max_messstand": 17,
+                        "min_messstand": 9,
+                        "ort": "Schwerin, Ostorf - Schweriner Innensee",
+                        "temperatur": 22,
+                      },
+                      {
+                        "akkustand": 81,
+                        "aktueller_messstand": 12,
+                        "erste_messung": "2022-09-23T08:12:00.0Z",
+                        "geraete_status": true,
+                        "gewaesserpegelart": "Binnenseepegel",
+                        "kennung": 591,
+                        "koordinaten": [53.584881, 11.207480],
+                        "letzte_messung": "2023-01-17T12:37:00.0Z",
+                        "max_messstand": 17,
+                        "min_messstand": 8,
+                        "ort": "Dümmersee",
+                        "temperatur": 14,
+                      },
+                    ]
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    kennung:
+                      type: number
+                      description: einmaliger Schlüssel zur eindeutigen Identifizierung einer Station
+                      x-faker: 
+                        datatype.number:
+                          min: 100
+                          max: 999
+                    akkustand:
+                      type: number
+                      description: Akkustand des Messgeraets in Prozent
+                      x-faker: 
+                        datatype.number:
+                          min: 0
+                          max: 100
+                    geraete_status:
+                      type: boolean
+                      description: Ist der Akkustand des Gerätsa fu 0 Prozent, ist der Status der Erreichbarkeit false
+                    erste_messung:
+                      type: string
+                      description: Zeitpunkt der ersten Messerung bzw. der Aktivierung des Geraets
+                      format: date-time
+                      x-faker: date.past
+                    letzte_messung:
+                      type: string
+                      description: Zeitpunkt der letzten Messung
+                      format: date-time
+                      x-faker: date.recent
+                    temperatur:
+                      type: number
+                      description: Temperatur des Wassers zum Zeitpunkt der letzten Messung
+                      x-faker:
+                        datatype.number:
+                          min: 10
+                          max: 22
+                    ort:
+                      type: string
+                      description: Standpunkt der Messstation
+                    gewaesserpegelart:
+                      type: string
+                      description: Gewaesserart, dessen Pegel gemessen wird
+                      enum: 
+                        - Binnenseepegel
+                        - Küstenpegel
+                        - Flusspegel
+                        - Kanalpegel
+                    max_messstand:
+                      type: integer
+                      description: hoechste Messwert Zeitpunkt der ersten Messerung
+                      format: int64
+                      minimum: 3
+                      maximum: 20
+                    min_messstand:
+                      type: integer
+                      description: niedrigeste Messwert Zeitpunkt der ersten Messerung
+                      format: int64
+                      minimum: 3
+                      maximum: 20
+                    aktueller_messstand:
+                      type: integer
+                      description: Messwert zum Zeitpunkt der letzten Messerung
+                      format: int64
+                      minimum: 3
+                      maximum: 20
+                    koordinaten:
+                      type: array
+                      description: Koordinaten der Messstation
+                      minItems: 2
+                      maxItems: 2
+                      items:
+                        type: number
