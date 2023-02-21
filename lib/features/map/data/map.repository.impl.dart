@@ -10,8 +10,7 @@ class MapRepositoryImpl implements MapRepository {
 
   @override
   Future<List<MapEntity>> getStations() async {
-    final stations = await mapRemoteDataSource.getStations();
-
-    return [];
+    // TODO: Add station state and error handling
+    return await mapRemoteDataSource.getStations();
   }
 }

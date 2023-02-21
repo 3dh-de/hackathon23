@@ -1,3 +1,5 @@
+import '../domain/map.entity.dart';
+
 abstract class MapDatasource {
-  Future<Map<String, dynamic>> getStations();
+  Future<List<MapEntity>> getStations();
 }

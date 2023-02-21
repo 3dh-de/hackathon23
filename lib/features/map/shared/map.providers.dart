@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hackathon23/features/app/shared/app.providers.dart';
+import 'package:hackathon23/features/map/domain/map.entity.dart';
 import 'package:hackathon23/features/map/presentation/map.controller.state.dart';
 
 import '../data/map.datasource.dart';
@@ -27,11 +28,14 @@ class MapProviders {
   static final Provider<MapRepository> mapRepository = Provider((ref) =>
       MapRepositoryImpl(mapRemoteDataSource: ref.read(mapRemoteDatasource)));
 
+  static final FutureProvider<List<MapEntity>> getStations = FutureProvider(
+      (ref) async => await ref.read(mapRepository).getStations());
   // Presentation
   static final StateNotifierProvider<MapController, MapControllerState>
       mapController = StateNotifierProvider((ref) {
+    final stations = ref.watch(getStations);
     return MapController(
-      MapControllerState(),
+      MapControllerState(stations: stations.value ?? []),
       ref.read(mapRepository),
     );
   });

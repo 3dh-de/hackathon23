@@ -19,4 +19,21 @@ class MapEntity with _$MapEntity {
     @Default('') String ort,
     @Default(0) int temperatur,
   }) = _MapEntity;
+
+  factory MapEntity.fromMap(Map<String, dynamic> map) {
+    return MapEntity(
+      akkustand: map['akkustand'],
+      aktuellerMessstand: map['aktueller_messstand'],
+      ersteMessung: DateTime.tryParse(map['erste_messung']),
+      geraeteStatus: map['geraete_status'],
+      gewaesserpegelart: map['gewaesserpegelart'],
+      kennung: map['kennung'],
+      koordinaten: LatLng(map['koordinaten'][0], map['koordinaten'][1]),
+      letzteMessung: DateTime.tryParse(map['letzte_messung']),
+      maxMessstand: map['max_messstand'],
+      minMessstand: map['min_messstand'],
+      ort: map['ort'],
+      temperatur: map['temperatur'],
+    );
+  }
 }

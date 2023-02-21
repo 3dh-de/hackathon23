@@ -8,9 +8,8 @@ class MapController extends StateNotifier<MapControllerState> {
   MapController(MapControllerState state, this.mapRepository) : super(state);
 
   void loadStations() async {
-    state = state.copyWith(stations: const AsyncLoading());
     final stations = await mapRepository.getStations();
 
-    state = state.copyWith(stations: AsyncData(stations));
+    state = state.copyWith(stations: stations);
   }
 }

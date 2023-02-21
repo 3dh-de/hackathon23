@@ -5,12 +5,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:hackathon23/features/map/shared/map.providers.dart';
 import 'package:latlong2/latlong.dart';
 
-class MapPage extends ConsumerWidget {
+import '../shared/map.providers.dart';
+
+class MapPage extends ConsumerStatefulWidget {
+  MapPage({Key? key}) : super(key: key);
+
+  @override
+  ConsumerState<MapPage> createState() => _MapPageState();
+}
+
+class _MapPageState extends ConsumerState<MapPage> {
   final MapController _mapController = MapController();
-  MapPage({Key? key}) : super(key: key) {
+
+  @override
+  void initState() {
+    super.initState();
     _mapController.mapEventStream.listen((event) {
       if (event is MapEventDoubleTapZoom) {
         debugPrint('mapEvent: ${event.targetZoom}');
@@ -19,16 +30,9 @@ class MapPage extends ConsumerWidget {
   }
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-
-    Future(() => ref.read(MapProviders.mapController.notifier).loadStations());
-    // ref.read(MapProviders.mapController.notifier).loadStations();
-    // mapControllerNotifier.loadStations();
     final mapControllerState = ref.watch(MapProviders.mapController);
-
-    mapControllerState.stations
-        .whenData((value) => debugPrint('data recieved'));
 
     return PlatformScaffold(
       appBar: PlatformAppBar(
@@ -40,7 +44,7 @@ class MapPage extends ConsumerWidget {
             mapController: _mapController,
             options: MapOptions(
               center: LatLng(53.59749511484229, 11.404999125376248),
-              zoom: 13,
+              zoom: 8,
             ),
             children: [
               TileLayer(
@@ -56,23 +60,22 @@ class MapPage extends ConsumerWidget {
                 ),
               ),
               MarkerLayer(
-                markers: [
-                  Marker(
-                    point: LatLng(53.565477494524934, 11.389190554651758),
-                    builder: (_) {
-                      return Platform.isIOS
-                          ? const Icon(
-                              CupertinoIcons.location_solid,
-                              size: 24,
-                            )
-                          : const Icon(
-                              Icons.location_on_rounded,
-                              size: 24,
-                              color: Colors.blueAccent,
-                            );
-                    },
-                  ),
-                ],
+                markers: mapControllerState.stations
+                    .map((e) => Marker(
+                        point: e.koordinaten!,
+                        builder: (_) {
+                          return Platform.isIOS
+                              ? const Icon(
+                                  CupertinoIcons.location_solid,
+                                  size: 24,
+                                )
+                              : const Icon(
+                                  Icons.location_on_rounded,
+                                  size: 24,
+                                  color: Colors.blueAccent,
+                                );
+                        }))
+                    .toList(),
               ),
               Positioned(
                 right: 25,
