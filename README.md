@@ -1,6 +1,12 @@
 # hackathon_app
 
-A new Flutter project.
+## GOOGLE MAP API KEY!!!
+Unter android -> app -> main -> AndroidManifest.xml
+
+``<meta-data android:name="com.google.android.geo.API_KEY"
+android:value="GOOGLE_MAPS_API_KEY_HERE"/>``
+
+
 
 ## Getting Started
 
